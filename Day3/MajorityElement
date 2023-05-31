@@ -1,0 +1,41 @@
+import java.util.*;
+class MajorityElement
+{
+	public static void main(String args[])
+	{
+		Scanner s = new Scanner(System.in);
+		int arr[] = new int[1];
+		System.out.println("Enter erray elements:");
+		
+		for(int i=0; i<9 ; i++)
+		{
+			arr[i] = s.nextInt();
+		}
+		
+		System.out.println("Array");
+		for(int i=0; i<9 ; i++)
+		{
+			System.out.print(arr[i]+" ");
+		}
+		
+		int count = 0;
+		for(int i=0; i<9; i++)
+		{
+			count = 1;
+			for(int j = i+1; j<9; j++)
+			{
+				if(arr[i]==arr[j])
+				{
+					count++;
+				}
+				
+				if(count>9/2)
+				{
+					System.out.println("\nMajority element in array:  "+arr[i]);
+					break;			
+				}
+				
+			}
+		}
+	}
+}
