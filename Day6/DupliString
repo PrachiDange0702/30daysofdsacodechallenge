@@ -1,0 +1,33 @@
+import java.util.*;
+class DupliString
+{
+	public static void main(String args[])
+	{
+		Scanner s = new Scanner(System.in);
+		String st = "harshprachi";
+		char c[] = st.toCharArray();
+
+		for(int i=0; i<c.length; i++)
+		{
+			int count = 0;
+
+			for(int j=0; j<c.length; j++)
+			{
+				if(c[i]==c[j])
+				{
+					count++;
+				}
+			}
+			if(count==1)
+			{
+				break;
+			}
+			else
+			{
+			System.out.print(c[i]+"   ");
+			System.out.println(count);
+			}
+		}
+		System.out.println();
+	}
+}
