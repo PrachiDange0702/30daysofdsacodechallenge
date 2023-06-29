@@ -1,0 +1,55 @@
+import java.util.*;
+class Subarraysum
+{
+	public static void main(String args[])
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter the size of array");
+		int n =s.nextInt();
+		int a[] = new int[n];
+
+		System.out.println("Enter the array element");
+		for(int i=0; i<n; i++)
+		{
+			a[i] = s.nextInt();
+		}	
+		System.out.println("\nArray");
+		for(int i=0; i<n; i++)
+		{
+			System.out.print(a[i]+" ");
+		}	
+
+		System.out.println("\nEnter the sum: ");
+		int sum = s.nextInt();
+		int currentsum =0;
+		for(int i=0; i<n; i++)
+		{
+			currentsum = a[i];
+			if(currentsum==sum)
+			{
+				System.out.println("Sum found at index+ "+i);
+			}
+			else
+			{
+				for(int j=i+1; j<n; j++)
+				{
+					currentsum += a[j];
+					if(currentsum == sum)
+					{
+						System.out.println("Sum found between index  "+i+" and "+j);
+						break;
+					}
+				}
+			}
+			if(currentsum == sum)
+			{
+				break;
+			}
+		}
+		if(currentsum!=sum)
+		{		
+			System.out.println("No Subarray found");
+		}
+	
+	}
+}
