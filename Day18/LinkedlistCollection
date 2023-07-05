@@ -1,0 +1,30 @@
+import java.util.*;
+class LinkedlistCollection
+{
+	public static void main(String args[])
+	{
+		LinkedList<String> l = new LinkedList<>();
+		l.add("Virat kohli");
+		l.add("MS Dhoni");
+		l.add("Schin Tenulkar");
+		
+		System.out.println(l);
+		System.out.println();
+
+		l.addFirst("Rohit Sharma");
+		System.out.println("\nLinked List after at beginning");
+		System.out.println(l);
+	
+		l.addLast("Yuvraj singh");
+		System.out.println("\nLinked List after at last");
+		System.out.println(l);
+
+		l.removeFirst();
+		System.out.println("\nLinked List after delete at beginning");
+		System.out.println(l);
+
+		l.removeLast();
+		System.out.println("\nLinked list after delete at end");
+		System.out.println(l);
+	}
+}
