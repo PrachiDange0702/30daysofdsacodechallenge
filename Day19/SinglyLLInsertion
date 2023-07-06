@@ -1,0 +1,145 @@
+import java.util.*;
+public class SinglyLLInsertion
+{
+	Scanner s=new Scanner(System.in);
+	class Node{
+		int data;
+		Node next;
+		Node(int data)
+		{
+			this.data=data;
+			next=null;	
+		}
+		
+	}	
+		public Node head=null;
+		public Node temp=null;
+	void createlist(int n)
+	{
+		if(head==null)
+		{
+			System.out.println("Enter data of node 1:");
+			int data=s.nextInt();
+			Node newnode=new Node(data);
+			head=newnode;
+			head.next=null;	
+		}
+			temp=head;
+			for(int i=2;i<=n;i++)
+			{
+				System.out.println("Enter data of node "+i+":");
+				int data=s.nextInt();
+				Node newnode=new Node(data);
+				newnode.next=null;
+				temp.next=newnode;
+				temp=newnode;							
+			}
+		
+	}	
+
+	void display()
+	{
+		if(head==null)
+		{		
+			System.out.println("\nList is empty");
+		}				
+		else{
+			temp=head;
+			System.out.println("Data in the list:");
+			while(temp!=null)
+			{
+				System.out.println(temp.data);
+				temp=temp.next;	
+			}
+		}
+	}
+
+
+	void insertatbeg(int data)
+	{
+		Node newnode=new Node(data);
+		if(head==null)
+		{
+			head=newnode;
+			head.next=null;
+		}		
+		else{
+			newnode.next=head;
+			head=newnode;
+		}
+	}
+
+	void insertatend(int data)
+	{
+		Node newnode=new Node(data);
+		if(head==null)
+		{
+			head=newnode;
+			head.next=null;
+		}		
+		else{
+			temp=head;
+			while(temp.next!=null)
+			{
+				temp=temp.next;
+			}
+			newnode.next=null;
+			temp.next=newnode;
+			temp=newnode;
+		}
+	}
+
+	void insertatmid(int data)
+	{
+		Node newnode=new Node(data);
+		if(head==null)	
+		{
+			head=newnode;
+			head.next=null;
+		}
+		else
+		{
+			System.out.println("Enter your position:");
+			int p=s.nextInt();
+			if(p<0)
+			{
+				System.out.println("Enter valid position");
+			}
+			else
+			{
+				if(p==1)
+				{
+					newnode.next=head;
+					head=newnode;
+				}
+				else
+				{
+					temp=head;
+					for(int i=2;i<=p-1;i++)
+					{
+						temp=temp.next;	
+					}
+					newnode.next=temp.next;
+					temp.next=newnode;
+					temp=newnode;
+				}
+			}
+		}
+	}
+public static void main(String args[])
+	{
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();
+		SinglyLLInsertion ob = new SinglyLLInsertion();
+		ob.createlist(n);
+		ob.display();
+		ob.insertatbeg(n);
+		ob.display();
+		ob.insertatend(n);
+		ob.display();
+		ob.insertatmid(n);
+		ob.display();
+	}
+}
+
+ 
